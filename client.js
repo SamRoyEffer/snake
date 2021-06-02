@@ -1,4 +1,5 @@
 const net = require("net");
+const { stdin } = require("process");
 const connect = function () {
   const conn = net.createConnection({
     host: "135.23.222.131",
@@ -8,8 +9,9 @@ const connect = function () {
   conn.setEncoding("utf8");
   conn.on("connect", () => {
     conn.setEncoding("utf8");
-    console.log("Connected")
-    conn.write("Name: Sam")
+    console.log("Connected");
+    conn.write("Name: Sam");
+    
   });
   return conn;
 };
